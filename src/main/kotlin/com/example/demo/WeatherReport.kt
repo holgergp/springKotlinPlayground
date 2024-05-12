@@ -11,5 +11,5 @@ class WeatherReport(
     var unit: String,
     var city: String,
     var date: Date,
-    @Id @GeneratedValue var id: Long? = null
+    @Id @GeneratedValue var id: Long? = null,
 )

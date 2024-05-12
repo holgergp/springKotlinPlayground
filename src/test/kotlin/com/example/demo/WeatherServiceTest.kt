@@ -14,17 +14,17 @@ class WeatherServiceTest {
 
     @Test
     fun getLastNByCity() {
-
         every { weatherRepository.save<Weather>(any()) } returnsArgument 0
 
-        every { weatherRepository.findByCityOrderByDateDesc("Duesseldorf") } returns listOf(
-            Weather(
-                20,
-                "C",
-                "Berlin",
-                Date()
+        every { weatherRepository.findByCityOrderByDateDesc("Duesseldorf") } returns
+            listOf(
+                Weather(
+                    20,
+                    "C",
+                    "Berlin",
+                    Date(),
+                ),
             )
-        )
 
         val weatherService = WeatherService(weatherRepository)
         val weather = Weather(20, "C", "Duesseldorf", Date())
@@ -38,14 +38,15 @@ class WeatherServiceTest {
     fun getCurrentWeatherByCity() {
         every { weatherRepository.save<Weather>(any()) } returnsArgument 0
 
-        every { weatherRepository.findByCityOrderByDateDesc("Duesseldorf") } returns listOf(
-            Weather(
-                20,
-                "C",
-                "Berlin",
-                Date()
+        every { weatherRepository.findByCityOrderByDateDesc("Duesseldorf") } returns
+            listOf(
+                Weather(
+                    20,
+                    "C",
+                    "Berlin",
+                    Date(),
+                ),
             )
-        )
 
         val weatherService = WeatherService(weatherRepository)
         val weather = Weather(20, "C", "Duesseldorf", Date())

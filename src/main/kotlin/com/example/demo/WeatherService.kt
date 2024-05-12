@@ -8,7 +8,10 @@ class WeatherService(private val repository: WeatherRepository) {
         repository.save(weather)
     }
 
-    fun getLastNByCity(city: String, lastN: Number): List<Weather> {
+    fun getLastNByCity(
+        city: String,
+        lastN: Number,
+    ): List<Weather> {
         return repository.findByCityOrderByDateDesc(city).take(lastN.toInt())
     }
 
@@ -16,4 +19,3 @@ class WeatherService(private val repository: WeatherRepository) {
         return repository.findByCityOrderByDateDesc(city).first()
     }
 }
-

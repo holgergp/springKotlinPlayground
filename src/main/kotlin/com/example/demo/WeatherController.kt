@@ -40,7 +40,7 @@ class WeatherController(private val service: WeatherService) {
                 unit = request.unit,
                 city = request.city,
                 date = request.date,
-            )
+            ),
         )
     }
 }
